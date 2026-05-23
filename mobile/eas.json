@@ -15,6 +15,9 @@
       "android": {
         "buildType": "apk"
       },
+      "env": {
+        "EXPO_PUBLIC_DOMAIN": "METE-SERVIDOR-AQUI.com"
+      },
       "autoIncrement": true
     }
   },
