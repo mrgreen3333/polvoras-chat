@@ -1,0 +1,8 @@
+{
+  "name": "polvoras-chat",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build:mobile": "cd mobile && eas build --platform android --profile production"
+  }
+}

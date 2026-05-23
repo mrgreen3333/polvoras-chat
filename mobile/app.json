@@ -1,0 +1,63 @@
+{
+  "expo": {
+    "name": "Pólvoras Chat",
+    "slug": "mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "mobile",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0D1A0D"
+    },
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "com.polvoras.chat"
+    },
+    "android": {
+      "package": "com.polvoras.chat",
+      "versionCode": 1,
+      "minSdkVersion": 28,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/icon.png",
+        "backgroundColor": "#0D1A0D"
+      }
+    },
+    "web": {
+      "favicon": "./assets/images/icon.png"
+    },
+    "plugins": [
+      [
+        "expo-router",
+        {
+          "origin": "https://replit.com/"
+        }
+      ],
+      "expo-font",
+      "expo-web-browser",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Pólvoras Chat precisa de acesso à tua galeria para partilhar fotos.",
+          "cameraPermission": "Pólvoras Chat precisa de acesso à câmara para tirar fotos."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/images/icon.png",
+          "color": "#4CAF50",
+          "androidMode": "default",
+          "androidCollapsedTitle": "Pólvoras Chat"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}

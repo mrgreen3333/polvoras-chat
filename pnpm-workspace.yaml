@@ -1,0 +1,14 @@
+packages:
+  - 'api-server'
+  - 'mobile'
+
+allowBuilds:
+  esbuild: set this to true or false
+
+catalog:
+  react: 19.1.0
+  react-dom: 19.1.0
+  '@tanstack/react-query': ^5.100.9
+  zod: ^3.24.5
+  drizzle-orm: ^0.43.1
+  '@types/node': ^22.15.3
