@@ -73,7 +73,6 @@ export default function ChatScreen() {
     setText("");
     setShowEmoji(false);
     await sendMessage(id, trimmed, "text");
-    await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
   }
 
   async function handleImagePick() {
@@ -84,12 +83,10 @@ export default function ChatScreen() {
     if (result.canceled || !result.assets.length) return;
     const asset = result.assets[0];
     await sendMessage(id!, asset.uri, asset.type === "video" ? "video" : "image");
-    await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
   }
 
   async function handleLongPress(message: Message) {
     if (!user) return;
-    await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
     if (message.senderId === user.id && !message.deleted) {
       Alert.alert("Mensagem", "", [
         {

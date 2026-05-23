@@ -66,7 +66,6 @@ export default function RegisterScreen() {
           { paddingTop: insets.top + 20, paddingBottom: insets.bottom + 32 },
         ]}
         keyboardShouldPersistTaps="handled"
-        bottomOffset={20}
       >
         <TouchableOpacity
           onPress={() => router.back()}
