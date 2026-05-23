@@ -11,7 +11,6 @@ import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
 import React, { useEffect } from "react";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-import { KeyboardProvider } from "react-native-keyboard-controller";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 import { ErrorBoundary } from "@/components/ErrorBoundary";
@@ -111,10 +110,8 @@ export default function RootLayout() {
             <AuthProvider>
               <ChatProvider>
                 <GestureHandlerRootView style={{ flex: 1 }}>
-                  <KeyboardProvider>
-                    <StatusBar style="light" />
-                    <RootLayoutNav />
-                  </KeyboardProvider>
+                  <StatusBar style="light" />
+                  <RootLayoutNav />
                 </GestureHandlerRootView>
               </ChatProvider>
             </AuthProvider>

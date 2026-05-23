@@ -3,6 +3,9 @@ import React, { useState } from "react";
 import {
   ActivityIndicator,
   Alert,
+  KeyboardAvoidingView,
+  Platform,
+  ScrollView,
   StyleSheet,
   Text,
   TextInput,
@@ -13,7 +16,6 @@ import * as ImagePicker from "expo-image-picker";
 
 import { Feather } from "@expo/vector-icons";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
 import { Avatar } from "@/components/Avatar";
 import { useAuth } from "@/context/AuthContext";
 import { useColors } from "@/hooks/useColors";
@@ -96,10 +98,13 @@ export default function EditProfileScreen() {
         </TouchableOpacity>
       </View>
 
-      <KeyboardAwareScrollView
+      <KeyboardAvoidingView
+        style={{ flex: 1 }}
+        behavior={Platform.OS === "ios" ? "padding" : undefined}
+      >
+      <ScrollView
         contentContainerStyle={[styles.container, { paddingBottom: insets.bottom + 32 }]}
         keyboardShouldPersistTaps="handled"
-        bottomOffset={20}
       >
         <View style={styles.avatarSection}>
           <TouchableOpacity onPress={pickAvatar} activeOpacity={0.8} style={styles.avatarBtn}>
@@ -151,7 +156,8 @@ export default function EditProfileScreen() {
             <Text style={[styles.readOnlyText, { color: colors.accent }]}>{user.inviteCode}</Text>
           </View>
         </View>
-      </KeyboardAwareScrollView>
+      </ScrollView>
+      </KeyboardAvoidingView>
     </View>
   );
 }

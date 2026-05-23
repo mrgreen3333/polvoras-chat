@@ -3,6 +3,7 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import {
   Alert,
   FlatList,
+  KeyboardAvoidingView,
   Platform,
   StyleSheet,
   Text,
@@ -13,7 +14,6 @@ import {
 import * as ImagePicker from "expo-image-picker";
 
 import { Feather } from "@expo/vector-icons";
-import { KeyboardAvoidingView } from "react-native-keyboard-controller";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { ChatBubble } from "@/components/ChatBubble";
 import { EmojiPicker } from "@/components/EmojiPicker";

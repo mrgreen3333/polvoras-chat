@@ -2,6 +2,9 @@ import { useRouter } from "expo-router";
 import React, { useState } from "react";
 import {
   ActivityIndicator,
+  KeyboardAvoidingView,
+  Platform,
+  ScrollView,
   StyleSheet,
   Text,
   TextInput,
@@ -10,7 +13,6 @@ import {
 } from "react-native";
 import { Feather } from "@expo/vector-icons";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { KeyboardAwareScrollView } from "react-native-keyboard-controller";
 import { useAuth } from "@/context/AuthContext";
 import { useColors } from "@/hooks/useColors";
 
@@ -44,13 +46,16 @@ export default function LoginScreen() {
 
   return (
     <View style={[styles.root, { backgroundColor: colors.background }]}>
-      <KeyboardAwareScrollView
+      <KeyboardAvoidingView
+        style={{ flex: 1 }}
+        behavior={Platform.OS === "ios" ? "padding" : undefined}
+      >
+      <ScrollView
         contentContainerStyle={[
           styles.container,
           { paddingTop: insets.top + 20, paddingBottom: insets.bottom + 32 },
         ]}
         keyboardShouldPersistTaps="handled"
-        bottomOffset={20}
       >
         <TouchableOpacity
           onPress={() => router.back()}
@@ -130,7 +135,8 @@ export default function LoginScreen() {
           </Text>
           <Text style={[styles.switchLink, { color: colors.primary }]}>Criar conta</Text>
         </TouchableOpacity>
-      </KeyboardAwareScrollView>
+      </ScrollView>
+      </KeyboardAvoidingView>
     </View>
   );
 }
