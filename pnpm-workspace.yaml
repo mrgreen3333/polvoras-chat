@@ -4,7 +4,7 @@ packages:
   - 'mobile-classic'
 
 allowBuilds:
-  esbuild: set this to true or false
+  esbuild: true
 
 catalog:
   react: 19.1.0
