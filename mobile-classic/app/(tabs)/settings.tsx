@@ -12,7 +12,7 @@ import {
   View,
 } from "react-native";
 import * as Clipboard from "expo-clipboard";
-import * as Haptics from "expo-haptics";
+
 import { Feather } from "@expo/vector-icons";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Avatar } from "@/components/Avatar";
@@ -68,13 +68,11 @@ export default function SettingsScreen() {
 
   async function copyKey() {
     await Clipboard.setStringAsync(user!.inviteCode);
-    await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
     Alert.alert("", `Código ${user!.inviteCode} copiado`);
   }
 
   async function copyPublicKey() {
     await Clipboard.setStringAsync(user!.publicKey);
-    await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
     Alert.alert("Chave Pública Copiada", "Partilha com contactos para verificação E2E");
   }
 

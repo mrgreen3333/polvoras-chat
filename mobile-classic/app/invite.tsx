@@ -9,7 +9,7 @@ import {
   View,
 } from "react-native";
 import * as Clipboard from "expo-clipboard";
-import * as Haptics from "expo-haptics";
+
 import { Feather } from "@expo/vector-icons";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useAuth } from "@/context/AuthContext";
@@ -27,7 +27,6 @@ export default function InviteScreen() {
 
   async function handleCopy() {
     await Clipboard.setStringAsync(user!.inviteCode);
-    await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
     Alert.alert("", `Código ${user!.inviteCode} copiado!`);
   }
 
