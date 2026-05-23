@@ -1,11 +1,7 @@
 {
   "expo": {
-    "extra": {
-      "eas": {
-        "projectId": "74b7a188-995e-4166-b742-f0c8bec4ede8"
-      }
-    },
     "name": "Pólvoras Chat Classic",
+    "owner": "plvoras",
     "slug": "polvoras-chat",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -29,7 +25,10 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/icon.png",
         "backgroundColor": "#0D1A0D"
-      }
+      },
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ]
     },
     "web": {
       "favicon": "./assets/images/icon.png"
@@ -62,6 +61,11 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "d9f97543-d173-4da3-a1b9-eff6ad8892c6"
+      }
     }
   }
 }
