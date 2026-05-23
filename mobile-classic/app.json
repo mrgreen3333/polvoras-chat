@@ -5,8 +5,8 @@
         "projectId": "74b7a188-995e-4166-b742-f0c8bec4ede8"
       }
     },
-    "name": "Pólvoras Chat",
-    "slug": "polvoras-chat",
+    "name": "Pólvoras Chat Classic",
+    "slug": "polvoras-chat-classic",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -20,12 +20,12 @@
     },
     "ios": {
       "supportsTablet": false,
-      "bundleIdentifier": "com.polvoras.chat"
+      "bundleIdentifier": "com.polvoras.chat.classic"
     },
     "android": {
-      "package": "com.polvoras.chat",
+      "package": "com.polvoras.chat.classic",
       "versionCode": 1,
-      "minSdkVersion": 24,
+      "minSdkVersion": 21,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/icon.png",
         "backgroundColor": "#0D1A0D"
@@ -46,8 +46,8 @@
       [
         "expo-image-picker",
         {
-          "photosPermission": "Pólvoras Chat precisa de acesso à tua galeria para partilhar fotos.",
-          "cameraPermission": "Pólvoras Chat precisa de acesso à câmara para tirar fotos."
+          "photosPermission": "Pólvoras Chat Classic precisa de acesso à tua galeria para partilhar fotos.",
+          "cameraPermission": "Pólvoras Chat Classic precisa de acesso à câmara para tirar fotos."
         }
       ],
       [
@@ -56,13 +56,12 @@
           "icon": "./assets/images/icon.png",
           "color": "#4CAF50",
           "androidMode": "default",
-          "androidCollapsedTitle": "Pólvoras Chat"
+          "androidCollapsedTitle": "Pólvoras Chat Classic"
         }
       ]
     ],
     "experiments": {
-      "typedRoutes": true,
-      "reactCompiler": true
+      "typedRoutes": true
     }
   }
 }

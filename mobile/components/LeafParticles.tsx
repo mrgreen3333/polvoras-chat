@@ -1,10 +1,10 @@
 import React, { useEffect, useRef } from "react";
-import { Animated, Dimensions, StyleSheet, Text, View } from "react-native";
+import { Animated, Dimensions, Platform, StyleSheet, Text, View } from "react-native";
 
 const { width: SW, height: SH } = Dimensions.get("window");
 
 const LEAF_VARIANTS = ["🌿", "🍃", "🌱", "🍀", "☘️"];
-const LEAF_COUNT = 14;
+const LEAF_COUNT = Platform.OS === "web" ? 14 : 6;
 
 type LeafConfig = {
   id: number;

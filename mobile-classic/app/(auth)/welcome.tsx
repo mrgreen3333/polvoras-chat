@@ -6,10 +6,8 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { Feather } from "@expo/vector-icons";
-import { LeafParticles } from "@/components/LeafParticles";
 import { useColors } from "@/hooks/useColors";
 
 export default function WelcomeScreen() {
@@ -19,13 +17,7 @@ export default function WelcomeScreen() {
 
   return (
     <View style={[styles.root, { backgroundColor: "#071007" }]}>
-      <LinearGradient
-        colors={["#071007", "#0D1A0D", "#142114", "#0D1A0D"]}
-        style={StyleSheet.absoluteFill}
-        start={{ x: 0, y: 0 }}
-        end={{ x: 1, y: 1 }}
-      />
-      <LeafParticles intensity="low" />
+      <View style={StyleSheet.absoluteFill} />
 
       <View style={[styles.container, { paddingTop: insets.top + 40, paddingBottom: insets.bottom + 32 }]}>
         {/* Logo */}
@@ -65,19 +57,13 @@ export default function WelcomeScreen() {
         <View style={styles.buttons}>
           <TouchableOpacity
             onPress={() => router.push("/(auth)/register")}
+            style={[styles.primaryBtn, { backgroundColor: colors.primary }]}
             activeOpacity={0.85}
           >
-            <LinearGradient
-              colors={[colors.primary, "#2E7D32"]}
-              style={styles.primaryBtn}
-              start={{ x: 0, y: 0 }}
-              end={{ x: 1, y: 1 }}
-            >
-              <Text style={[styles.primaryBtnText, { color: colors.primaryForeground }]}>
-                Criar Conta
-              </Text>
-              <Feather name="arrow-right" size={18} color={colors.primaryForeground} />
-            </LinearGradient>
+            <Text style={[styles.primaryBtnText, { color: colors.primaryForeground }]}>
+              Criar Conta
+            </Text>
+            <Feather name="arrow-right" size={18} color={colors.primaryForeground} />
           </TouchableOpacity>
 
           <TouchableOpacity

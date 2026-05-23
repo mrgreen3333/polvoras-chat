@@ -1,6 +1,7 @@
 packages:
   - 'api-server'
   - 'mobile'
+  - 'mobile-classic'
 
 allowBuilds:
   esbuild: set this to true or false
