@@ -16,7 +16,7 @@
         "buildType": "apk"
       },
       "env": {
-        "EXPO_PUBLIC_DOMAIN": "polvoras-project-1.onrender.com"
+        "EXPO_PUBLIC_DOMAIN": "polvoras-chat.onrender.com"
       },
       "autoIncrement": true
     }
