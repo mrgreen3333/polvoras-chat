@@ -106,16 +106,16 @@ export default function RootLayout() {
     <SafeAreaProvider>
       <ErrorBoundary>
         <QueryClientProvider client={queryClient}>
-          <SocketProvider>
-            <AuthProvider>
+          <AuthProvider>
+            <SocketProvider>
               <ChatProvider>
                 <GestureHandlerRootView style={{ flex: 1 }}>
                   <StatusBar style="light" />
                   <RootLayoutNav />
                 </GestureHandlerRootView>
               </ChatProvider>
-            </AuthProvider>
-          </SocketProvider>
+            </SocketProvider>
+          </AuthProvider>
         </QueryClientProvider>
       </ErrorBoundary>
     </SafeAreaProvider>
