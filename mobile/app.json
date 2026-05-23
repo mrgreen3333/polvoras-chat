@@ -1,5 +1,10 @@
 {
   "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "74b7a188-995e-4166-b742-f0c8bec4ede8"
+      }
+    },
     "name": "Pólvoras Chat",
     "slug": "mobile",
     "version": "1.0.0",
