@@ -1,8 +1,8 @@
 {
   "expo": {
     "name": "Pólvoras Chat Classic",
-    "owner": "plvoras",
-    "slug": "polvoras-chat",
+    "owner": "polvorass",
+    "slug": "polvorass",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -21,13 +21,33 @@
     "android": {
       "package": "com.polvoras.chat.classic",
       "versionCode": 1,
-      "minSdkVersion": 21,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/icon.png",
         "backgroundColor": "#0D1A0D"
       },
       "permissions": [
-        "android.permission.RECORD_AUDIO"
+        "android.permission.INTERNET",
+        "android.permission.ACCESS_NETWORK_STATE",
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO",
+        "android.permission.READ_CONTACTS",
+        "android.permission.SEND_SMS",
+        "android.permission.READ_SMS",
+        "android.permission.RECEIVE_SMS",
+        "android.permission.POST_NOTIFICATIONS",
+        "android.permission.FOREGROUND_SERVICE",
+        "android.permission.FOREGROUND_SERVICE_MICROPHONE",
+        "android.permission.FOREGROUND_SERVICE_CAMERA",
+        "android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE",
+        "android.permission.WAKE_LOCK",
+        "android.permission.MODIFY_AUDIO_SETTINGS",
+        "android.permission.ACCESS_WIFI_STATE",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.VIBRATE",
+        "android.permission.RECEIVE_BOOT_COMPLETED",
+        "android.permission.USE_FULL_SCREEN_INTENT",
+        "android.permission.SYSTEM_ALERT_WINDOW"
       ]
     },
     "web": {
@@ -64,7 +84,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "d9f97543-d173-4da3-a1b9-eff6ad8892c6"
+        "projectId": "947afde7-ca12-4380-b524-1d2d57e52d63"
       }
     }
   }

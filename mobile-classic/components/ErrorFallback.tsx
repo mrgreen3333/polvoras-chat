@@ -10,9 +10,10 @@ import {
   Text,
   View,
 } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { useColors } from "@/hooks/useColors";
+
+const FALLBACK_INSET = 16;
 
 export type ErrorFallbackProps = {
   error: Error;
@@ -21,7 +22,6 @@ export type ErrorFallbackProps = {
 
 export function ErrorFallback({ error, resetError }: ErrorFallbackProps) {
   const colors = useColors();
-  const insets = useSafeAreaInsets();
 
   const [isModalVisible, setIsModalVisible] = useState(false);
 
@@ -58,7 +58,7 @@ export function ErrorFallback({ error, resetError }: ErrorFallbackProps) {
           style={({ pressed }) => [
             styles.topButton,
             {
-              top: insets.top + 16,
+              top: FALLBACK_INSET,
               backgroundColor: colors.card,
               opacity: pressed ? 0.8 : 1,
             },
@@ -139,7 +139,7 @@ export function ErrorFallback({ error, resetError }: ErrorFallbackProps) {
                 style={styles.modalScrollView}
                 contentContainerStyle={[
                   styles.modalScrollContent,
-                  { paddingBottom: insets.bottom + 16 },
+                  { paddingBottom: FALLBACK_INSET },
                 ]}
                 showsVerticalScrollIndicator
               >

@@ -22,7 +22,18 @@ import {
   addNotificationResponseListener,
 } from "@/utils/notifications";
 
-SplashScreen.preventAutoHideAsync();
+try {
+  SplashScreen.preventAutoHideAsync();
+} catch {}
+
+// Global JS error handler — prevents silent crashes on old devices
+if (typeof ErrorUtils !== "undefined") {
+  const origHandler = ErrorUtils.getGlobalHandler();
+  ErrorUtils.setGlobalHandler((error, isFatal) => {
+    console.error("Unhandled JS error:", error?.message, error?.stack);
+    if (origHandler) origHandler(error, isFatal);
+  });
+}
 
 const queryClient = new QueryClient();
 

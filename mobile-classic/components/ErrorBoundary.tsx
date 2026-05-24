@@ -1,29 +1,17 @@
-import React, { Component, ComponentType, PropsWithChildren } from "react";
+import React, { Component, type ComponentType, type PropsWithChildren } from "react";
+import { Alert } from "react-native";
 
-import { ErrorFallback, ErrorFallbackProps } from "@/components/ErrorFallback";
+import { ErrorFallback, type ErrorFallbackProps } from "@/components/ErrorFallback";
 
-export type ErrorBoundaryProps = PropsWithChildren<{
+type ErrorBoundaryProps = PropsWithChildren<{
   FallbackComponent?: ComponentType<ErrorFallbackProps>;
   onError?: (error: Error, stackTrace: string) => void;
 }>;
 
 type ErrorBoundaryState = { error: Error | null };
 
-/**
- * This is a special case for for using the class components. Error boundaries must be class components because React only provides error boundary functionality through lifecycle methods (componentDidCatch and getDerivedStateFromError) which are not available in functional components.
- * https://react.dev/reference/react/Component#catching-rendering-errors-with-an-error-boundary
- */
-export class ErrorBoundary extends Component<
-  ErrorBoundaryProps,
-  ErrorBoundaryState
-> {
+export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
   state: ErrorBoundaryState = { error: null };
-
-  static defaultProps: {
-    FallbackComponent: ComponentType<ErrorFallbackProps>;
-  } = {
-    FallbackComponent: ErrorFallback,
-  };
 
   static getDerivedStateFromError(error: Error): ErrorBoundaryState {
     return { error };
@@ -40,7 +28,7 @@ export class ErrorBoundary extends Component<
   };
 
   render() {
-    const { FallbackComponent } = this.props;
+    const FallbackComponent = this.props.FallbackComponent ?? ErrorFallback;
 
     return this.state.error && FallbackComponent ? (
       <FallbackComponent
