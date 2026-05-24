@@ -8,6 +8,7 @@
     "icon": "./assets/images/icon.png",
     "scheme": "mobile",
     "userInterfaceStyle": "dark",
+    "jsEngine": "hermes",
     "newArchEnabled": false,
     "splash": {
       "image": "./assets/images/splash.png",
