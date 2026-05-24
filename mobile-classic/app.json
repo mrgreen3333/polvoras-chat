@@ -28,8 +28,7 @@
       },
       "permissions": [
         "android.permission.RECORD_AUDIO"
-      ],
-      "jsEngine": "jsc"
+      ]
     },
     "web": {
       "favicon": "./assets/images/icon.png"
