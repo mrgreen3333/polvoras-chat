@@ -63,6 +63,16 @@
       "expo-font",
       "expo-web-browser",
       [
+        "expo-build-properties",
+        {
+          "android": {
+            "minSdkVersion": 24,
+            "compileSdkVersion": 34,
+            "targetSdkVersion": 34
+          }
+        }
+      ],
+      [
         "expo-image-picker",
         {
           "photosPermission": "Pólvoras Chat Classic precisa de acesso à tua galeria para partilhar fotos.",
