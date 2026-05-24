@@ -3,7 +3,9 @@ import React, { createContext, useCallback, useContext, useEffect, useState } fr
 import { generateKeyPair } from "@/utils/crypto";
 import { tokenBus } from "@/utils/tokenBus";
 
-const API_BASE = `https://${process.env.EXPO_PUBLIC_DOMAIN}/api`;
+function getApiBase() {
+  try { return `https://${process.env.EXPO_PUBLIC_DOMAIN}/api`; } catch { return "https://localhost/api"; }
+}
 
 export type UserStatus = "online" | "away" | "offline";
 
@@ -62,7 +64,7 @@ async function apiFetch(path: string, opts?: RequestInit & { token?: string }): 
     ...(token ? { Authorization: `Bearer ${token}` } : {}),
     ...((rest.headers as Record<string, string>) ?? {}),
   };
-  return fetch(`${API_BASE}${path}`, {
+  return fetch(`${getApiBase()}${path}`, {
     ...rest,
     headers,
   });

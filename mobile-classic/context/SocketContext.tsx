@@ -9,8 +9,12 @@ import React, {
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { tokenBus } from "@/utils/tokenBus";
 
-const API_BASE = `https://${process.env.EXPO_PUBLIC_DOMAIN}/api`;
-const WS_URL = `wss://${process.env.EXPO_PUBLIC_DOMAIN}/api/ws`;
+function getApiBase() {
+  try { return `https://${process.env.EXPO_PUBLIC_DOMAIN}/api`; } catch { return "https://localhost/api"; }
+}
+function getWsUrl() {
+  try { return `wss://${process.env.EXPO_PUBLIC_DOMAIN}/api/ws`; } catch { return "wss://localhost/api/ws"; }
+}
 
 export type IncomingMessage = {
   message: {
@@ -82,7 +86,7 @@ export function SocketProvider({ children }: { children: React.ReactNode }) {
 
     tokenRef.current = token;
     try {
-      const ws = new WebSocket(WS_URL);
+      const ws = new WebSocket(getWsUrl());
       wsRef.current = ws;
 
       ws.onopen = () => {
@@ -262,7 +266,7 @@ export function SocketProvider({ children }: { children: React.ReactNode }) {
     <SocketContext.Provider
       value={{
         connected,
-        apiBase: API_BASE,
+        apiBase: getApiBase(),
         sendChatMessage,
         initiateCall,
         answerCall,
@@ -288,4 +292,4 @@ export function useSocket() {
   return ctx;
 }
 
-export { API_BASE };
+export function getApiBaseUrl() { return getApiBase(); }
